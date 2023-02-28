@@ -10,6 +10,9 @@ import experienceData from "./data/experience.js";
 import Projects from "../models/projects.js";
 import projectsData from "./data/projects.js";
 
+import HomePageImages from "../models/home_page_images.js";
+import home_page_images from "./data/home_page_images.js";
+
 const seedDataBase = async () => {
   try {
     await mongoose.connect(dbURI);
@@ -19,6 +22,7 @@ const seedDataBase = async () => {
     console.log("Database dropped");
 
     const about_me = await AboutMe.create(aboutMeData);
+    const home_page = await HomePageImages.create(home_page_images);
     const experience = await Experience.create(experienceData);
     const projects = await Projects.create(projectsData);
 

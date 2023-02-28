@@ -15,7 +15,10 @@ const startServer = async () => {
 
     app.use(express.json());
 
-    app.use(router);
+    // Disabling cache, fixing issue with 304 browser response code
+    app.disable("etag");
+
+    app.use("/api", router);
 
     app.use((req, _res, next) => {
       console.log(`Incoming request ${req.method} = ${req.url}`);
