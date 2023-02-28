@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 
-import { port, dbURI } from "./config/enviroment.js";
+import { port, dbURI } from "./config/environment.js";
 import router from "./config/router.js";
 
 const app = express();

@@ -5,11 +5,11 @@ const linksSchema = new mongoose.Schema({
   web_link: { type: String },
 });
 
-const projectScheam = new mongoose.Schema({
+const projectSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  descripiton: { type: String, required: true },
-  images: [linksSchema],
-  links: [],
+  description: { type: String, required: true },
+  images: [{ type: String }],
+  links: [linksSchema],
 });
 
-export default mongoose.model("Project", projectScheam);
+export default mongoose.model("Project", projectSchema);
